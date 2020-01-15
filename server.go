@@ -13,10 +13,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Write(dump)
+	fmt.Println(string(dump))
 }
 
 func main() {
 	http.HandleFunc("/", handler)
 	fmt.Println("serving..")
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":8080", nil)
 }
